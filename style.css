@@ -1,0 +1,265 @@
+/* ========================
+   Base Layout（全体共通）
+======================== */
+body {
+    margin: 0;
+    padding: 60px 0 0 0; /* ←ナビゲーション高さ分の余白を上に取る！ */
+    background: #0a0f1a; /* ←背景をもっと深いネイビーに */
+    color: #e2e8f0; /* ←目に優しいオフホワイト */
+    font-family: 'Roboto', 'Noto Sans JP', sans-serif;
+    text-align: center;
+}
+
+h1 {
+    margin-top: 50px;
+    font-size: 3rem;
+}
+
+footer {
+    margin-top: 50px;
+    padding: 20px;
+    font-size: 0.9rem;
+    color: #94a3b8;
+}
+
+/* ========================
+   Hero Section（トップページの一番上）
+======================== */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    max-width: 400px;
+    margin-bottom: 40px;
+    /* white-space: nowrap; */
+}
+    
+.scroll-down {
+    font-size: 2rem;
+    animation: bounce 2s infinite;
+}
+
+/* ========================
+   Skills Section（スキル一覧）
+======================== */
+.skills-section {
+    margin-top: 30px;
+    padding: 20px;
+    text-align: left;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.skills-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #38bdf8;
+    padding-bottom: 5px;
+}
+
+.skills-section ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-bottom: 30px;
+}
+
+/* ========================
+   Certifications Section（資格一覧）
+======================== */
+.certifications-section {
+    margin-top: 30px;
+    padding: 20px;
+    text-align: left;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.certifications-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #38bdf8;
+    padding-bottom: 5px;
+}
+
+.certifications-section ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-bottom: 30px;
+}
+
+/* ========================
+   Navigation（ナビゲーションメニュー）
+======================== */
+nav {
+    background-color: rgba(17, 24, 39, 0.8); /* ←ナビをほんのりグレー混じりに */
+    padding: 10px;
+    position: fixed; /* ナビゲーションを画面上部に固定 */
+    top: 0; /* 上から0pxに配置 */
+    width: 100%; /* 横幅いっぱいに広げる */
+    z-index: 1000; /* 他の要素より上に表示 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* ナビゲーションに影をつける */
+}
+
+nav a {
+    color: #60a5fa; /* ←落ち着いた水色 */
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #38bdf8;
+}
+
+/* ========================
+   Hover Effects（リストのホバー演出）
+======================== */
+.skills-section ul li:hover,
+.certifications-section ul li:hover {
+    color: #38bdf8; /* 明るい水色にする */
+    cursor: pointer; /* ポインターにする（リンクっぽい動き） */
+    transition: color 0.3s ease; /* なめらかに色が変わる */
+}
+
+/* ========================
+   Animations（アニメーション）
+======================== */
+@keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(10px); }
+}
+
+/* ========================
+   About Section（自己紹介）
+======================== */
+.about-section {
+    margin-top: 30px;
+    padding: 20px;
+    text-align: left;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.8;
+}
+
+.about-section p {
+    margin-bottom: 1.5em; /* 1段落ごとに下に余白 */
+}
+
+/* ========================
+   Projects Section（実績一覧）
+======================== */
+.projects-section {
+    margin-top: 80px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px; /* カード同士の間隔 */
+  }
+
+.project-card {
+    background-color: #263249; /* ちょっとだけ明るくして高級感アップ */
+    padding: 40px 30px; /* 上下左右もう少し余裕を持たせる */
+    border: 1px solid #3b82f6; /* 青ラインはそのまま！ */
+    border-radius: 16px; /* 丸みも強めにして柔らかく */
+    width: 90%;
+    max-width: 600px;
+    min-height: 250px; /* 高さもほんのり伸ばす */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3); /* 影を柔らかめに、ふわっと */
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+  
+.project-card:hover {
+    transform: translateY(-8px); /* ホバー時に軽く浮き上がる */
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4); /* ホバー影もふわっと広めに */
+}
+  
+.project-card h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px; /* タイトルの下余白も少し取る */
+}
+  
+.project-card p {
+    font-size: 1.1rem;
+    line-height: 1.8; /* 行間を広めにして読みやすく */
+    margin-bottom: 0;
+}  
+
+.project-link {
+    display: inline-block;
+    margin-top: 10px;
+    background-color: #38bdf8;
+    color: #0f172a;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+  
+.project-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(56, 189, 248, 0.5);
+}
+
+/* ========================
+   Responsive（スマホ・タブレット対応）
+======================== */
+@media (max-width: 768px) {
+.project-card {
+    width: 90%;
+    max-width: 100%;
+    }
+}
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
