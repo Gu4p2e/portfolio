@@ -22,6 +22,18 @@ footer {
     color: #94a3b8;
 }
 
+/* 通常リンクの色を統一 */
+a {
+    color: #ffffff;        /* お好みで他の色でもOK */
+    text-decoration: none; /* 下線を消す（必要なら） */
+}
+  
+/* ホバー時に色変えたい場合 */
+a:hover {
+    color: #00bfff;        /* お好みでホバー色（例：スカイブルー） */
+    text-decoration: underline;
+}  
+
 /* ========================
    Hero Section（トップページの一番上）
 ======================== */
