@@ -10,43 +10,97 @@
 <body>
   <nav>
     <a href="index.html">Home</a>
-    <a href="skills.html">Skills</a>
+    <a href="skills.html" aria-current="page">Skills</a>
     <a href="certifications.html">Certifications</a>
     <a href="projects.html">Projects</a>
     <a href="about.html">About</a>
   </nav>
       
-  <h1>Skills</h1>
+  <main>
+    <h1>Skills</h1>
 
-  <div class="skills-section">
-    <h2>プログラミング言語</h2>
-    <ul>
-      <li>Java</li>
-      <li>JavaScript</li>
-      <li>VB</li>
-      <li>SQL</li>
-    </ul>
+    <section class="skills-section skill-sheet" aria-labelledby="skill-sheet-title">
+      <h2 id="skill-sheet-title">スキルシート</h2>
+      <p class="skill-sheet-summary">ITコンサルタント／PMOとして、プロジェクト計画、要件・論点の整理、顧客調整を担当してきました。開発・テストやクラウド運用の経験を活かし、関係者の判断と実行を支援しています。</p>
 
-    <h2>フレームワーク・ライブラリ</h2>
-    <ul>
-      <li>Struts</li>
-      <li>Spring Boot</li>
-    </ul>
+      <div class="skill-sheet-cards">
+        <article class="skill-sheet-card">
+          <h3>既存システムのリプラットフォーム検討</h3>
+          <p class="skill-sheet-meta"><time datetime="2026-10">2026年10月</time>〜<time datetime="2026-11">11月</time> ／ メンバー・プロジェクト推進支援</p>
+          <p>MVP検証後の作業計画を見直し、新旧システムの帳票・料金計算を比較するための準備を進めました。</p>
+          <p class="skill-sheet-tech">AWS ／ Snowflake ／ WBS</p>
+          <details>
+            <summary>詳しく見る</summary>
+            <ul>
+              <li>MVP検証後に予定する作業を整理し、WBSを修正。</li>
+              <li>帳票・料金計算の突き合わせに向け、現行の比較用システム構成図を整理。</li>
+              <li>比較結果を扱う運用フローを整理。</li>
+            </ul>
+          </details>
+        </article>
 
-    <h2>インフラ・クラウド</h2>
-    <ul>
-      <li>AWS</li>
-    </ul>
+        <article class="skill-sheet-card">
+          <h3>クラウドメール基盤の運用改善・セキュリティ強化</h3>
+          <p class="skill-sheet-meta"><time datetime="2026-03">2026年3月</time>〜<time datetime="2026-08">8月</time> ／ 運用改善担当</p>
+          <p>AWS上のメール基盤の運用保守を担当し、DMARC導入とランサムウェア対策としてのバックアップ運用改善を進めました。</p>
+          <p class="skill-sheet-tech">AWS ／ Linux ／ SPF・DKIM・DMARC</p>
+          <details>
+            <summary>詳しく見る</summary>
+            <ul>
+              <li><strong>運用保守</strong>。配送障害のログ調査、脆弱性の影響調査、適用手順の作成とリリースに対応。</li>
+              <li><strong>DMARC導入</strong>。レポートと認証状況を調査し、受信側に拒否を求めるポリシー（reject）への移行に向けて、対応が必要な送信元を特定し是正を依頼。</li>
+              <li><strong>バックアップ運用改善</strong>。保護対象と現行運用を整理。S3 Object LockやAWS Backup Vault Lockを含む方式を検討し、リストアの設計・検証、手順書作成とリリースに対応。</li>
+            </ul>
+          </details>
+        </article>
 
-    <h2>ツール・その他</h2>
-    <ul>
-      <li>SVN</li>
-      <li>Oracle</li>
-      <li>postgreSQL</li>
-      <li>Git / GitHub</li>
-      <li>CI/CD（学習中）</li>
-    </ul>
-  </div>
+        <article class="skill-sheet-card">
+          <h3>自治体向けシステムのVBからJavaへの移行</h3>
+          <p class="skill-sheet-meta"><time datetime="2025-04">2025年4月</time>〜<time datetime="2026-02">2026年2月</time> ／ PM・PL補佐兼開発メンバー</p>
+          <p>福利厚生システムの移行で、WBSを再構築し、開発とテストを並行できる計画に見直して、遅れていた案件の立て直しを支援しました。</p>
+          <p class="skill-sheet-tech">Java ／ VB ／ Struts ／ SQL ／ Oracle</p>
+          <details>
+            <summary>詳しく見る</summary>
+            <ul>
+              <li><strong>プロジェクト推進</strong>。残作業を棚卸しし、業務影響度と使用頻度で優先順位を整理。進捗・課題・品質を管理し、停滞しているタスクの対応を支援。</li>
+              <li><strong>顧客折衝</strong>。追加要件を掘り下げ、関係者と対応範囲や優先度を調整。</li>
+              <li><strong>開発・導入</strong>。機能改修、再利用できる共通部品の整備、テスト、本番障害の現地対応を担当。</li>
+            </ul>
+          </details>
+        </article>
+
+        <article class="skill-sheet-card">
+          <h3>自治体向け業務システムの標準化</h3>
+          <p class="skill-sheet-meta"><time datetime="2024-12">2024年12月</time>〜<time datetime="2025-03">2025年3月</time> ／ テスト・改修メンバー</p>
+          <p>文字コード変換システムを対象に、単体・総合テストの仕様書作成と実施、設定の修正や動作確認を担当しました。</p>
+          <p class="skill-sheet-tech">Java ／ SQL ／ Oracle ／ JP1/AJS3</p>
+          <details>
+            <summary>詳しく見る</summary>
+            <ul>
+              <li>設定ファイル、DB、バッチの修正と動作確認を行い、本番環境向けの資材を作成。</li>
+              <li>総合テストの日程を組み、連携処理で使うJP1/AJS3ジョブを作成。</li>
+              <li>新しく加わったメンバーの進捗を確認し、作業をフォロー。</li>
+            </ul>
+          </details>
+        </article>
+
+        <article class="skill-sheet-card">
+          <h3>不動産業界向け業務支援アプリの企画・要件定義</h3>
+          <p class="skill-sheet-meta"><time datetime="2021-07">2021年7月</time>〜<time datetime="2021-12">12月</time> ／ 営業側リーダー</p>
+          <p>不動産営業の業務をヒアリングし、顧客・スケジュール・契約管理を支援するアプリの要件を整理しました。</p>
+          <p class="skill-sheet-tech">業務分析 ／ 要件定義 ／ Figma</p>
+          <details>
+            <summary>詳しく見る</summary>
+            <ul>
+              <li>営業担当者へのヒアリングをもとに業務フローと承認プロセスを整理し、必要機能・非機能要件を定義。</li>
+              <li>Figmaのデモ画面をレビューし、営業現場で使いやすい画面や操作の改善を提案。</li>
+              <li>導入イメージ、コスト、運用フローを経営層に説明し、機能の優先順位と導入可否の判断を支援。</li>
+            </ul>
+          </details>
+        </article>
+      </div>
+    </section>
+  </main>
 
   <footer>
     © 2025 Jun's Portfolio

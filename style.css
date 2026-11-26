@@ -89,6 +89,76 @@ a:hover {
     margin-bottom: 30px;
 }
 
+.skill-sheet {
+    max-width: 880px;
+    line-height: 1.7;
+}
+
+.skill-sheet-summary {
+    max-width: 72ch;
+}
+
+.skill-sheet-cards {
+    display: grid;
+    gap: 16px;
+    margin-top: 24px;
+}
+
+.skill-sheet-card {
+    padding: clamp(16px, 3vw, 26px);
+    background: #263249;
+    border: 1px solid #3b82f6;
+    border-radius: 16px;
+}
+
+.skill-sheet-card h3 {
+    margin: 0;
+    color: #bfdbfe;
+    font-size: 1.2rem;
+    overflow-wrap: anywhere;
+}
+
+.skill-sheet-card p {
+    margin: 8px 0 0;
+}
+
+.skill-sheet-meta,
+.skill-sheet-tech {
+    color: #c4d4ed;
+    font-size: 0.9rem;
+}
+
+.skill-sheet-card details {
+    margin-top: 14px;
+    border-top: 1px solid #4e6385;
+}
+
+.skill-sheet-card summary {
+    color: #7dd3fc;
+    cursor: pointer;
+    padding: 10px 0 0;
+    min-height: 36px;
+    font-weight: 700;
+}
+
+.skill-sheet-card summary:focus-visible {
+    outline: 2px solid #7dd3fc;
+    outline-offset: 4px;
+}
+
+.skill-sheet-card details ul {
+    margin: 8px 0 0;
+}
+
+.skill-sheet-card details li + li {
+    margin-top: 6px;
+}
+
+.skill-sheet-card details li:hover {
+    color: inherit;
+    cursor: auto;
+}
+
 /* ========================
    Certifications Section（資格一覧）
 ======================== */
