@@ -67,96 +67,55 @@ a:hover {
 /* ========================
    Skills Section（スキル一覧）
 ======================== */
-.skills-section {
-    margin-top: 30px;
-    padding: 20px;
-    text-align: left;
+.skill-sheet-summary {
     max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.skills-section h2 {
-    font-size: 1.8rem;
-    margin-bottom: 10px;
-    border-bottom: 1px solid #38bdf8;
-    padding-bottom: 5px;
-}
-
-.skills-section ul {
-    list-style-type: disc;
-    padding-left: 20px;
-    margin-bottom: 30px;
-}
-
-.skill-sheet {
-    max-width: 880px;
+    margin: 0 auto;
+    padding-inline: 20px;
     line-height: 1.7;
 }
 
-.skill-sheet-summary {
-    max-width: 72ch;
-}
-
-.skill-sheet-cards {
-    display: grid;
-    gap: 16px;
-    margin-top: 24px;
-}
-
-.skill-sheet-card {
-    padding: clamp(16px, 3vw, 26px);
-    background: #263249;
-    border: 1px solid #3b82f6;
-    border-radius: 16px;
-}
-
-.skill-sheet-card h3 {
-    margin: 0;
-    color: #bfdbfe;
-    font-size: 1.2rem;
-    overflow-wrap: anywhere;
-}
-
-.skill-sheet-card p {
-    margin: 8px 0 0;
-}
-
-.skill-sheet-meta,
-.skill-sheet-tech {
+.skill-sheet-card .skill-sheet-meta {
+    margin-block: 0 12px;
     color: #c4d4ed;
     font-size: 0.9rem;
 }
 
-.skill-sheet-card details {
-    margin-top: 14px;
-    border-top: 1px solid #4e6385;
+.skill-sheet-card .skill-sheet-tech {
+    margin-top: 16px;
 }
 
 .skill-sheet-card summary {
-    color: #7dd3fc;
     cursor: pointer;
-    padding: 10px 0 0;
-    min-height: 36px;
-    font-weight: 700;
+}
+
+.skill-sheet-card summary::-webkit-details-marker {
+    display: none;
+}
+
+.skill-sheet-card summary::before {
+    content: "+" / "";
+    margin-right: 0.5em;
+}
+
+.skill-sheet-card details[open] summary::before {
+    content: "−" / "";
 }
 
 .skill-sheet-card summary:focus-visible {
-    outline: 2px solid #7dd3fc;
+    outline: 2px solid #e2e8f0;
     outline-offset: 4px;
 }
 
 .skill-sheet-card details ul {
-    margin: 8px 0 0;
+    border-top: 1px solid #4e6385;
+    margin: 18px 0 0;
+    padding: 16px 0 0 1.3em;
+    text-align: left;
+    line-height: 1.7;
 }
 
 .skill-sheet-card details li + li {
     margin-top: 6px;
-}
-
-.skill-sheet-card details li:hover {
-    color: inherit;
-    cursor: auto;
 }
 
 /* ========================
@@ -212,7 +171,6 @@ nav a:hover {
 /* ========================
    Hover Effects（リストのホバー演出）
 ======================== */
-.skills-section ul li:hover,
 .certifications-section ul li:hover {
     color: #38bdf8; /* 明るい水色にする */
     cursor: pointer; /* ポインターにする（リンクっぽい動き） */
@@ -289,7 +247,7 @@ nav a:hover {
     box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4); /* ホバー影もふわっと広めに */
 }
   
-.project-card h2 {
+.project-card :is(h2, h3) {
     font-size: 1.8rem;
     margin-bottom: 20px; /* タイトルの下余白も少し取る */
 }
@@ -323,6 +281,10 @@ nav a:hover {
 .project-card {
     width: 90%;
     max-width: 100%;
+    }
+    .skill-sheet-card {
+        box-sizing: border-box;
+        width: min(100%, 662px);
     }
 }
   
