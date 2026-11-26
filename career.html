@@ -3,9 +3,142 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Career - Jun's Portfolio</title>
+  <title>キャリアビジョン - Jun's Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <style>
+    .career-page {
+      max-width: 860px;
+      margin-inline: auto;
+      padding: 0 20px 64px;
+      text-align: left;
+    }
+
+    .career-page h1 {
+      margin: 52px 0 32px;
+      text-align: center;
+      font-size: clamp(2rem, 5vw, 3rem);
+    }
+
+    .career-timeline {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .career-timeline > li {
+      --year-column: 7rem;
+      --timeline-gap: 2rem;
+      position: relative;
+      display: grid;
+      grid-template-columns: var(--year-column) minmax(0, 1fr);
+      gap: var(--timeline-gap);
+      padding-bottom: 26px;
+    }
+
+    .career-timeline > li:last-child {
+      padding-bottom: 0;
+    }
+
+    .career-timeline > li::before,
+    .career-timeline > li::after {
+      content: "";
+      position: absolute;
+      left: calc(var(--year-column) + var(--timeline-gap) / 2);
+      transform: translateX(-50%);
+    }
+
+    .career-timeline > li:not(:last-child)::before {
+      top: 30px;
+      width: 1px;
+      height: 100%;
+      background: #4e6385;
+    }
+
+    .career-timeline > li::after {
+      top: 25px;
+      width: 12px;
+      height: 12px;
+      border: 2px solid #0a0f1a;
+      border-radius: 50%;
+      background: #7dd3fc;
+      box-sizing: border-box;
+    }
+
+    .career-milestone {
+      display: grid;
+      grid-template-columns: subgrid;
+      grid-column: 1 / -1;
+      align-items: start;
+      margin: 0;
+      font-size: 1rem;
+    }
+
+    .career-milestone time {
+      padding: 17px 0 0;
+      color: #93c5fd;
+      font-size: 1.4rem;
+      line-height: 1.5;
+    }
+
+    .career-milestone-title {
+      padding: 20px 24px 0;
+      border: 1px solid #4e6385;
+      border-bottom: 0;
+      border-radius: 16px 16px 0 0;
+      background: #263249;
+      font-size: clamp(1.15rem, 3vw, 1.45rem);
+      line-height: 1.5;
+    }
+
+    .career-timeline p {
+      grid-column: 2;
+      margin: calc(-1 * var(--timeline-gap)) 0 0;
+      padding: 10px 24px 22px;
+      border: 1px solid #4e6385;
+      border-top: 0;
+      border-radius: 0 0 16px 16px;
+      background: #263249;
+      color: #e2e8f0;
+      line-height: 1.8;
+    }
+
+    @media (max-width: 600px) {
+      .career-timeline > li {
+        display: block;
+        padding-left: 22px;
+      }
+
+      .career-timeline > li::before,
+      .career-timeline > li::after {
+        left: 5px;
+      }
+
+      .career-milestone {
+        display: block;
+        padding: 16px 16px 0;
+        border: 1px solid #4e6385;
+        border-bottom: 0;
+        border-radius: 16px 16px 0 0;
+        background: #263249;
+      }
+
+      .career-milestone time,
+      .career-milestone-title {
+        display: block;
+        padding: 0;
+      }
+
+      .career-milestone-title {
+        border: 0;
+      }
+
+      .career-timeline p {
+        margin: 0;
+        padding: 10px 16px 16px;
+      }
+    }
+  </style>
 </head>
 <body>
   <nav aria-label="メインナビゲーション">
@@ -17,22 +150,31 @@
     <a href="career.html" aria-current="page">Career</a>
   </nav>
 
-  <main>
-    <h1>Career</h1>
-    <div class="projects-section">
-      <section class="project-card skill-sheet-card">
-        <h2>2027年｜PMOとしてプロジェクト運営を支える</h2>
+  <main class="career-page">
+    <h1>キャリアビジョン</h1>
+    <ol class="career-timeline" role="list">
+      <li>
+        <h2 class="career-milestone">
+          <time datetime="2027">2027年</time>
+          <span class="career-milestone-title">PMOとしてプロジェクト運営を支える</span>
+        </h2>
         <p>進捗や課題を整理し、担当者・期限・対応状況を把握する。遅れや課題の兆しに気づいたら、関係者に確認・共有し、必要な対応につなげる。また、会議では目的や議題を整理し、参加者の意見を引き出しながら、決定事項と次のアクションを明確にできるようになる。こうしたPMO業務を着実に担い、プロジェクトの円滑な運営に貢献する。</p>
-      </section>
-      <section class="project-card skill-sheet-card">
-        <h2>2028年｜シニアコンサル</h2>
+      </li>
+      <li>
+        <h2 class="career-milestone">
+          <time datetime="2028">2028年</time>
+          <span class="career-milestone-title">シニアコンサル</span>
+        </h2>
         <p>設計の選択肢と推奨案を技術的な根拠とともに説明し、何を、いつまでに、どの水準で届けるかを顧客と合意できる。課題の兆しを捉えたら、早めに関係者を巻き込み、打ち手を進める。こうした判断と調整を担い、案件の一領域を任せてもらえるシニアコンサルになる。</p>
-      </section>
-      <section class="project-card skill-sheet-card">
-        <h2>2031年｜マネージャー</h2>
+      </li>
+      <li>
+        <h2 class="career-milestone">
+          <time datetime="2031">2031年</time>
+          <span class="career-milestone-title">マネージャー</span>
+        </h2>
         <p>技術と顧客折衝に強いPMとして、メンバーが課題を先読みし、自分で打ち手を考えて動けるチームを育てる。実案件で一段難しい仕事を任せ、試行錯誤やつまずきを次の成長につなげる。技術的に難しい判断や顧客との調整が必要なときは、自分が支えに入れるマネージャーになる。</p>
-      </section>
-    </div>
+      </li>
+    </ol>
   </main>
 </body>
 </html>
